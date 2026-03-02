@@ -47,6 +47,11 @@ def main():
                 log_event("player_hit")
                 print("Game Over!")
                 sys.exit()
+            for shoot in shots:
+                if shoot.collides_with(obj):
+                    log_event("asteroid_shot")
+                    obj.kill()
+                    shoot.kill()
 
         screen.fill("black")
         # You can iterate over objects in a group just like any other collection in Python:
